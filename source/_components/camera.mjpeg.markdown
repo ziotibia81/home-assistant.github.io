@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Generic MJPEG IP Camera"
-description: "Instructions how to integrate IP cameras within Home Assistant."
+description: "Instructions on how to integrate IP cameras within Home Assistant."
 date: 2015-11-09 08:36
 sidebar: true
 comments: false
@@ -33,10 +33,6 @@ Configuration variables:
 - **username** (*Optional*): The username for accessing your camera.
 - **password** (*Optional*): The password for accessing your camera.
 - **authentication** (*Optional*): `basic` (default) or `digest` auth for requests.
-
-<p class='note'>
-There is a <a href="https://github.com/shazow/urllib3/issues/800" target="_blank">known issue in urllib3</a> that you will get error messages in your logs like <code>[StartBoundaryNotFoundDefect(), MultipartInvariantViolationDefect()], unparsed data: ''</code> but the component still works fine. You can ignore the messages. 
-</p>
 
 ## {% linkable_title Examples %}
 

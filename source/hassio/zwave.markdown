@@ -16,18 +16,12 @@ zwave:
   usb_path: /dev/ttyACM0
 ```
 
-### RAZBERRY BOARD
+### {% linkable_title RAZBERRY BOARD %}
 
 If you need GPIO on Raspberry Pi 3 for your Z-Wave module, add the following line into `config.txt` (you have to access that on the SD card directly; simply plug it into your PC and edit it there):
 
 ```
 dtoverlay=pi3-miniuart-bt
-```
-
-For some devices the `/dev/ttyAMA0` device is not detected by udev and is therefore not mapped by Docker. To explicitly set this device for mapping to Home-Assistant, execute the following command using the ssh add-on:
-
-```bash
-$ curl -d '{"devices": ["ttyAMA0"]}' http://hassio/homeassistant/options
 ```
 
 After that, you need to change `usb_path` to `/dev/ttyAMA0` in your `configuration.yaml`.
@@ -37,16 +31,26 @@ zwave:
   usb_path: /dev/ttyAMA0
 ```
 
-### HUSBZB-1:
+### {% linkable_title HUSBZB-1 %}
 
 ```yaml
 zwave:
   usb_path: /dev/ttyUSB0
-  
+
 zha:
   usb_path: /dev/ttyUSB1
   database_path: /config/zigbee.db
 ```
+
+### {% linkable_title Finding the path %}
+
+If the above defaults don't work, you can check what hardware has been found using the [hassio command](/hassio/commandline/#hardware):
+
+```bash
+$ hassio hardware info
+```
+
+Or you can use the UI and look in the *System* section of the *Hass.io* menu. There you'll find a *Hardware* button which will list all the hardware found.
 
 ## {% linkable_title Further reading %}
 

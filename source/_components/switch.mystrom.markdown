@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "myStrom Switch"
-description: "Instructions how to integrate myStrom switches into Home Assistant."
+description: "Instructions on how to integrate myStrom switches into Home Assistant."
 date: 2015-11-25 22:00
 sidebar: true
 comments: false
@@ -15,6 +15,17 @@ ha_iot_class: "Local Polling"
 
 
 The `mystrom` switch platform allows you to control the state of your [myStrom](https://mystrom.ch/en/) switches. The built-in sensor is measuring the power consumption while the switch is on. 
+
+## {% linkable_title Setup %}
+
+Make sure that you have enabled the REST API under **Advanced** in the web frontend of the switch.
+
+<p class='img'>
+  <img src='{{site_root}}/images/components/mystrom/mystrom-advanced.png' />
+</p>
+
+
+## {% linkable_title Configuration %}
 
 To use your myStrom switch in your installation, add the following to your `configuration.yaml` file:
 
